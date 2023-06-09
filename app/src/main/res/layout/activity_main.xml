@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Power"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Введите мощность нагрузки, Вт:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/PowerSet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:minHeight="50dp"
+        android:hint="50 ..."
+        app:layout_constraintEnd_toEndOf="@+id/Power"
+        app:layout_constraintStart_toStartOf="@+id/Power"
+        app:layout_constraintTop_toBottomOf="@+id/Power" />
+
+    <TextView
+        android:id="@+id/Voltage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Введите напряжение нагрузки, В:"
+        app:layout_constraintLeft_toLeftOf="@+id/PowerSet"
+        app:layout_constraintRight_toRightOf="@+id/PowerSet"
+        app:layout_constraintTop_toBottomOf="@+id/PowerSet" />
+
+    <EditText
+        android:id="@+id/VoltageSet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="24, 220 или 380 ..."
+        app:layout_constraintLeft_toLeftOf="@+id/Voltage"
+        app:layout_constraintRight_toRightOf="@+id/Voltage"
+        app:layout_constraintTop_toBottomOf="@+id/Voltage" />
+
+    <TextView
+        android:id="@+id/Phase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="8dp"
+        android:text="Введите количество фаз:"
+        app:layout_constraintLeft_toLeftOf="@+id/VoltageSet"
+        app:layout_constraintRight_toRightOf="@+id/VoltageSet"
+        app:layout_constraintTop_toBottomOf="@+id/VoltageSet" />
+
+    <EditText
+        android:id="@+id/PhaseSet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="1 или 3"
+        app:layout_constraintLeft_toLeftOf="@+id/Phase"
+        app:layout_constraintRight_toRightOf="@+id/Phase"
+        app:layout_constraintTop_toBottomOf="@+id/Phase" />
+
+    <TextView
+        android:id="@+id/CosFi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="8dp"
+        android:text="Введите коэффициент нагрузки:"
+        app:layout_constraintLeft_toLeftOf="@+id/PhaseSet"
+        app:layout_constraintRight_toRightOf="@+id/PhaseSet"
+        app:layout_constraintTop_toBottomOf="@+id/PhaseSet" />
+
+    <EditText
+        android:id="@+id/CosFiSet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="1 или 0,8"
+        app:layout_constraintLeft_toLeftOf="@+id/CosFi"
+        app:layout_constraintRight_toRightOf="@+id/CosFi"
+        app:layout_constraintTop_toBottomOf="@+id/CosFi" />
+
+    <Button
+        android:id="@+id/Switcher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="16dp"
+        android:padding="10dp"
+        android:text="Рассчитать номинальный ток автоматического выключателя"
+        app:layout_constraintEnd_toEndOf="@+id/CosFiSet"
+        app:layout_constraintStart_toStartOf="@+id/CosFiSet"
+        app:layout_constraintTop_toBottomOf="@+id/CosFiSet" />
+
+    <Button
+        android:id="@+id/CableLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="10dp"
+        android:text="Рассчитать сечение медного проводника"
+        app:layout_constraintEnd_toEndOf="@+id/Switcher"
+        app:layout_constraintStart_toStartOf="@+id/Switcher"
+        app:layout_constraintTop_toBottomOf="@+id/Switcher" />
+
+    <Button
+        android:id="@+id/Guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Справочник"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/SavedData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Сохраненное"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
