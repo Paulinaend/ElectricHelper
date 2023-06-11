@@ -6,6 +6,26 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/currentdescriptionswitcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Ток фазы нагрузки равен"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currentswitcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text=" Ампер"
+        app:layout_constraintEnd_toEndOf="@id/currentdescriptionswitcher"
+        app:layout_constraintStart_toStartOf="@id/currentdescriptionswitcher"
+        app:layout_constraintTop_toBottomOf="@id/currentdescriptionswitcher" />
+
+    <TextView
         android:id="@+id/resultswitcherdescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,9 +40,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text=" Ампер"
-        app:layout_constraintEnd_toEndOf="@id/resultswitcherdescription"
+        android:layout_marginEnd="15dp"
+        android:text="Ток"
+        app:layout_constraintEnd_toStartOf="@id/amper"
         app:layout_constraintStart_toStartOf="@id/resultswitcherdescription"
         app:layout_constraintTop_toBottomOf="@id/resultswitcherdescription" />
+
+    <TextView
+        android:id="@+id/amper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:text="Ампер"
+        app:layout_constraintEnd_toEndOf="@id/resultswitcherdescription"
+        app:layout_constraintStart_toEndOf="@id/resultswitcher"
+        app:layout_constraintTop_toBottomOf="@id/resultswitcherdescription" />
+
+    <ImageButton
+        android:id="@+id/backswitcher"
+        android:layout_width="95dp"
+        android:layout_height="102dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="@string/backswitcher"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

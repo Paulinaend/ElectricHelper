@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ChooseYourTechnic</string>
+    <string name="backswitcher">backswitcher</string>
+    <string name="saveddata">Сохраненное</string>
+    <string name="guide">Справочник</string>
+    <string name="cableline">Рассчитать сечение медного проводника</string>
+    <string name="switcher">Рассчитать номинальный ток автоматического выключателя</string>
+    <string name="backcable">backcable</string>
 </resources>
