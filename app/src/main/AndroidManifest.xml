@@ -12,9 +12,6 @@
         android:theme="@style/Theme.ChooseYourTechnic"
         tools:targetApi="31">
         <activity
-            android:name=".FirstActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -23,6 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="ru.synergy.chooseyourtechnic.Guide" />
+        <activity android:name="ru.synergy.chooseyourtechnic.ResultCable" />
+        <activity android:name="ru.synergy.chooseyourtechnic.ResultSwitcher" />
+        <activity android:name="ru.synergy.chooseyourtechnic.FirstActivity" />
+        <activity android:name="ru.synergy.chooseyourtechnic.SavedData" />
 
     </application>
 
