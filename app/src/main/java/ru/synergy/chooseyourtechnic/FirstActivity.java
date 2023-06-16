@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,11 +25,14 @@ public class FirstActivity extends AppCompatActivity {
         final Button guide = (Button) findViewById(R.id.Guide);
         final Button saved = (Button) findViewById(R.id.SavedData);
 
+
         switcher.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v){
                 SetFields();
                 Intent i = new Intent(FirstActivity.this, ResultSwitcher.class);
+                i.putExtra("current", getCurrent());
                 startActivity(i);
             }
         });
@@ -38,6 +42,7 @@ public class FirstActivity extends AppCompatActivity {
             public void onClick(View v){
                 SetFields();
                 Intent i = new Intent(FirstActivity.this, ResultCable.class);
+                i.putExtra("current", getCurrent());
                 startActivity(i);
             }
         });
@@ -103,6 +108,25 @@ public class FirstActivity extends AppCompatActivity {
     public float getCosFi()
     {
         return this.cosfiset;
+    }
+
+    public String getCurrent() {
+
+        String res;
+
+        if (phaseset == 3) {
+            float result = (float) (powerset / (voltageset * cosfiset * (Math.sqrt(3))));
+            res = Float.toString(result);
+
+        } else if (phaseset == 1) {
+            float result = (float) powerset / voltageset;
+            res = Float.toString(result);
+
+        } else {
+            res = "Введите корректное число фаз";
+
+        }
+        return res;
     }
 
 }

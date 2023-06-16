@@ -6,4 +6,5 @@
     <string name="cableline">Рассчитать сечение медного проводника</string>
     <string name="switcher">Рассчитать номинальный ток автоматического выключателя</string>
     <string name="backcable">backcable</string>
+    <string name="test">test</string>
 </resources>
