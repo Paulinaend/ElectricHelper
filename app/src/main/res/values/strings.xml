@@ -7,4 +7,6 @@
     <string name="switcher">Рассчитать номинальный ток автоматического выключателя</string>
     <string name="backcable">backcable</string>
     <string name="test">test</string>
+    <string name="backsaved">backsaved</string>
+    <string name="save_text">Сохранить данные</string>
 </resources>

@@ -27,7 +27,6 @@ public class FirstActivity extends AppCompatActivity {
 
 
         switcher.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v){
                 SetFields();
@@ -58,7 +57,13 @@ public class FirstActivity extends AppCompatActivity {
         saved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                SetFields();
                 Intent i = new Intent(FirstActivity.this, SavedData.class);
+                i.putExtra("power", getPower());
+                i.putExtra("voltage", getVoltage());
+                i.putExtra("phase", getPhase());
+                i.putExtra("cosFi", getCosFi());
+                i.putExtra("current", getCurrent());
                 startActivity(i);
             }
         });

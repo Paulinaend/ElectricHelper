@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".SavedData">
+
+    <TextView
+        android:id="@+id/savedvalues"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="start"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/save_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/save_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:onClick="saveText"
+        android:text="@string/save_text"
+        app:layout_constraintBottom_toTopOf="@+id/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savedvalues" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="start"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/open_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/save_text" />
+
+    <Button
+        android:id="@+id/open_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openText"
+        android:backgroundTint="@color/black"
+        android:text="Открыть данные"
+        app:layout_constraintBottom_toTopOf="@+id/backsaved"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text" />
+    <ImageButton
+        android:id="@+id/backsaved"
+        android:layout_width="95dp"
+        android:layout_height="102dp"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/backsaved"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
