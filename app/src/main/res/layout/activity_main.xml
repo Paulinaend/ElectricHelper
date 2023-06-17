@@ -114,9 +114,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
-        android:padding="10dp"
+        android:padding="5dp"
         android:text="@string/switcher"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/CosFiSet"
@@ -127,10 +127,10 @@
         android:id="@+id/CableLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:padding="10dp"
+        android:padding="5dp"
         android:text="@string/cableline"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/Switcher"
@@ -158,6 +158,20 @@
         android:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/but_db"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/black"
+        android:text="@string/savedb"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/CableLine"
+        app:layout_constraintStart_toStartOf="@+id/CableLine"
+        app:layout_constraintTop_toBottomOf="@+id/CableLine" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

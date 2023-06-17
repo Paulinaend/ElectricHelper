@@ -25,6 +25,9 @@
         <activity android:name="ru.synergy.chooseyourtechnic.ResultSwitcher" />
         <activity android:name="ru.synergy.chooseyourtechnic.FirstActivity" />
         <activity android:name="ru.synergy.chooseyourtechnic.SavedData" />
+        <activity android:name="ru.synergy.chooseyourtechnic.NoteListActivity" />
+        <activity android:name="ru.synergy.chooseyourtechnic.AddNoteActivity" />
+
 
     </application>
 

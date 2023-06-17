@@ -24,6 +24,7 @@ public class FirstActivity extends AppCompatActivity {
         final Button cable = (Button) findViewById(R.id.CableLine);
         final Button guide = (Button) findViewById(R.id.Guide);
         final Button saved = (Button) findViewById(R.id.SavedData);
+        final Button butdatabase = (Button) findViewById(R.id.but_db);
 
 
         switcher.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +69,13 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
+        butdatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(FirstActivity.this, NoteListActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void SetFields() {
