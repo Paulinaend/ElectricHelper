@@ -19,12 +19,12 @@ public class FirstActivity extends AppCompatActivity {
     float voltageset=1;
     float phaseset=1;
     float cosfiset=1;
-    EditText powerSet ;
-    EditText voltageSet;
-    EditText phaseSet ;
-    EditText cosFiSet;
+
 //    SharedPreferences sharedPreferences;
-//    final String SAVED_TEXT = "saved_text";
+//    final String SAVED_POWER = "saved_power";
+//    final String SAVED_VOLTAGE = "saved_voltage";
+//    final String SAVED_PHASE = "saved_phase";
+//    final String SAVED_COSFI = "saved_cosfi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +37,37 @@ public class FirstActivity extends AppCompatActivity {
         final Button saved = (Button) findViewById(R.id.SavedData);
         final Button butdatabase = (Button) findViewById(R.id.but_db);
 
-//        loadText();
+        EditText powerSet = (EditText) findViewById(R.id.PowerSet);
+        EditText voltageSet = (EditText) findViewById(R.id.VoltageSet);
+        EditText phaseSet = (EditText) findViewById(R.id.PhaseSet);
+        EditText cosFiSet = (EditText) findViewById(R.id.CosFiSet);
+
+//        loadText(powerSet, voltageSet, phaseSet, cosFiSet);
 //        powerSet.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 //            @Override
 //            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-//                saveText();
+//                savePower(powerSet);
+//                return true;
+//            }
+//        });
+//        voltageSet.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                saveVoltage(voltageSet);
+//                return true;
+//            }
+//        });
+//        phaseSet.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                savePhase(phaseSet);
+//                return true;
+//            }
+//        });
+//        cosFiSet.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                saveCosFi(cosFiSet);
 //                return true;
 //            }
 //        });
@@ -50,7 +76,7 @@ public class FirstActivity extends AppCompatActivity {
         switcher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                SetFields();
+                SetFields(powerSet, voltageSet, phaseSet, cosFiSet);
                 Intent i = new Intent(FirstActivity.this, ResultSwitcher.class);
                 i.putExtra("current", getCurrent());
                 startActivity(i);
@@ -60,7 +86,7 @@ public class FirstActivity extends AppCompatActivity {
         cable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                SetFields();
+                SetFields(powerSet, voltageSet, phaseSet, cosFiSet);
                 Intent i = new Intent(FirstActivity.this, ResultCable.class);
                 i.putExtra("current", getCurrent());
                 startActivity(i);
@@ -78,7 +104,7 @@ public class FirstActivity extends AppCompatActivity {
         saved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                SetFields();
+                SetFields(powerSet, voltageSet, phaseSet, cosFiSet);
                 Intent i = new Intent(FirstActivity.this, SavedData.class);
                 i.putExtra("power", getPower());
                 i.putExtra("voltage", getVoltage());
@@ -98,16 +124,16 @@ public class FirstActivity extends AppCompatActivity {
         });
     }
 
-    public void SetFields() {
-        EditText powerSet = (EditText) findViewById(R.id.PowerSet);
-        EditText voltageSet = (EditText) findViewById(R.id.VoltageSet);
-        EditText phaseSet = (EditText) findViewById(R.id.PhaseSet);
-        EditText cosFiSet = (EditText) findViewById(R.id.CosFiSet);
+    public void SetFields(EditText a, EditText b, EditText c, EditText d) {
+//        EditText powerSet = (EditText) findViewById(R.id.PowerSet);
+//        EditText voltageSet = (EditText) findViewById(R.id.VoltageSet);
+//        EditText phaseSet = (EditText) findViewById(R.id.PhaseSet);
+//        EditText cosFiSet = (EditText) findViewById(R.id.CosFiSet);
 
-        String powers = powerSet.getText().toString();
-        String voltages = voltageSet.getText().toString();
-        String phases = phaseSet.getText().toString();
-        String cosfis = cosFiSet.getText().toString();
+        String powers = a.getText().toString();
+        String voltages = b.getText().toString();
+        String phases = c.getText().toString();
+        String cosfis = d.getText().toString();
 
         if (!powers.equals("")) {
             powerset = Float.parseFloat(powers);//powerSet.getText().toString()
@@ -162,21 +188,45 @@ public class FirstActivity extends AppCompatActivity {
         return res;
     }
 
-//    private void loadText() {
+//    private void loadText(EditText a, EditText b, EditText c, EditText d) {
 //        sharedPreferences = getPreferences(MODE_PRIVATE);
-//        String savedText = sharedPreferences.getString(SAVED_TEXT, "Пусто");
-//        powerSet.setText(savedText);
+//        String savedPower = sharedPreferences.getString(SAVED_POWER, "500...");
+//        String savedVoltage = sharedPreferences.getString(SAVED_VOLTAGE, "24, 220 или 380...");
+//        String savedPhase = sharedPreferences.getString(SAVED_PHASE, "1 или 3");
+//        String savedCosFi = sharedPreferences.getString(SAVED_COSFI, "1 или 0.8");
+//        a.setText(savedPower);
+//        b.setText(savedVoltage);
+//        c.setText(savedPhase);
+//        d.setText(savedCosFi);
 //    }
 //
-//    private void saveText() {
+//    private void savePower(EditText a) {
 //        sharedPreferences = getPreferences(MODE_PRIVATE);
 //        SharedPreferences.Editor ed = sharedPreferences.edit();
-//        ed.putString(SAVED_TEXT, powerSet.getText().toString());
+//        ed.putString(SAVED_POWER, a.getText().toString());
+//        ed.commit();
+//    }
+//    private void saveVoltage(EditText a) {
+//        sharedPreferences = getPreferences(MODE_PRIVATE);
+//        SharedPreferences.Editor ed = sharedPreferences.edit();
+//        ed.putString(SAVED_VOLTAGE, a.getText().toString());
+//        ed.commit();
+//    }
+//    private void savePhase(EditText a) {
+//        sharedPreferences = getPreferences(MODE_PRIVATE);
+//        SharedPreferences.Editor ed = sharedPreferences.edit();
+//        ed.putString(SAVED_PHASE, a.getText().toString());
+//        ed.commit();
+//    }
+//    private void saveCosFi(EditText a) {
+//        sharedPreferences = getPreferences(MODE_PRIVATE);
+//        SharedPreferences.Editor ed = sharedPreferences.edit();
+//        ed.putString(SAVED_COSFI, a.getText().toString());
 //        ed.commit();
 //    }
 //    @Override
 //    protected void onDestroy() {
 //        super.onDestroy();
-//        saveText();
+//        savePower();
 //    }
 }
