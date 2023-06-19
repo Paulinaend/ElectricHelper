@@ -1,11 +1,16 @@
 package ru.synergy.chooseyourtechnic;
 
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +19,12 @@ public class FirstActivity extends AppCompatActivity {
     float voltageset=1;
     float phaseset=1;
     float cosfiset=1;
+    EditText powerSet ;
+    EditText voltageSet;
+    EditText phaseSet ;
+    EditText cosFiSet;
+//    SharedPreferences sharedPreferences;
+//    final String SAVED_TEXT = "saved_text";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +36,15 @@ public class FirstActivity extends AppCompatActivity {
         final Button guide = (Button) findViewById(R.id.Guide);
         final Button saved = (Button) findViewById(R.id.SavedData);
         final Button butdatabase = (Button) findViewById(R.id.but_db);
+
+//        loadText();
+//        powerSet.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                saveText();
+//                return true;
+//            }
+//        });
 
 
         switcher.setOnClickListener(new View.OnClickListener() {
@@ -142,4 +162,21 @@ public class FirstActivity extends AppCompatActivity {
         return res;
     }
 
+//    private void loadText() {
+//        sharedPreferences = getPreferences(MODE_PRIVATE);
+//        String savedText = sharedPreferences.getString(SAVED_TEXT, "Пусто");
+//        powerSet.setText(savedText);
+//    }
+//
+//    private void saveText() {
+//        sharedPreferences = getPreferences(MODE_PRIVATE);
+//        SharedPreferences.Editor ed = sharedPreferences.edit();
+//        ed.putString(SAVED_TEXT, powerSet.getText().toString());
+//        ed.commit();
+//    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        saveText();
+//    }
 }

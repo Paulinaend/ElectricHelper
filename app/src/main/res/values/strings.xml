@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">ChooseYourTechnic</string>
     <string name="backswitcher">backswitcher</string>
-    <string name="saveddata">Сохранить в файл</string>
     <string name="guide">Справочник</string>
     <string name="cableline">Рассчитать сечение медного проводника</string>
     <string name="switcher">Рассчитать номинальный ток автоматического выключателя</string>
@@ -14,5 +13,6 @@
     <string name="phasenote">PhaseNote</string>
     <string name="cosfinote">CosFiNote</string>
     <string name="currentnote">CurrentNote</string>
-    <string name="savedb">Сохранить исходные данные</string>
+    <string name="savedb">Сделать заметку по потребителю</string>
+    <string name="saveddata">Сохранить расчет</string>
 </resources>

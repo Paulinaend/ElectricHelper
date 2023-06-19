@@ -42,20 +42,10 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="15dp"
         android:text="Ток"
-        app:layout_constraintEnd_toStartOf="@id/mm"
+        app:layout_constraintEnd_toEndOf="@+id/resultcabledescription"
         app:layout_constraintStart_toStartOf="@id/resultcabledescription"
         app:layout_constraintTop_toBottomOf="@id/resultcabledescription" />
 
-    <TextView
-        android:id="@+id/mm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
-        android:text="кв.мм"
-        app:layout_constraintEnd_toEndOf="@id/resultcabledescription"
-        app:layout_constraintStart_toEndOf="@id/resultcable"
-        app:layout_constraintTop_toBottomOf="@id/resultcabledescription" />
 
     <ImageButton
         android:id="@+id/backcable"

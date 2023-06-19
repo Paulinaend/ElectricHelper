@@ -42,20 +42,10 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="15dp"
         android:text="Ток"
-        app:layout_constraintEnd_toStartOf="@id/amper"
+        app:layout_constraintEnd_toEndOf="@+id/resultswitcherdescription"
         app:layout_constraintStart_toStartOf="@id/resultswitcherdescription"
         app:layout_constraintTop_toBottomOf="@id/resultswitcherdescription" />
 
-    <TextView
-        android:id="@+id/amper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
-        android:text="Ампер"
-        app:layout_constraintEnd_toEndOf="@id/resultswitcherdescription"
-        app:layout_constraintStart_toEndOf="@id/resultswitcher"
-        app:layout_constraintTop_toBottomOf="@id/resultswitcherdescription" />
 
     <ImageButton
         android:id="@+id/backswitcher"
